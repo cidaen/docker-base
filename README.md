@@ -18,6 +18,6 @@ Para ejecutar una aplicación de Python que no está en un cuaderno:
 
 Para añadir requisitos se puede modificar el fichero `requirements.txt` y construir la imagen con el comando: 
 
-  docker build -t="Name of the image" .
+  `docker build -t="Name of the image" .`
 
 Este comando se debe ejecutar en la carpeta base del repositorio.   
