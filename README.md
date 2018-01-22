@@ -1,38 +1,23 @@
-[![Docker Automated buil](https://img.shields.io/docker/automated/enriquegrodrigo/docker-pydata.svg)](https://hub.docker.com/r/enriquegrodrigo/docker-pydata/)
-[![Docker Build Statu](https://img.shields.io/docker/build/enriquegrodrigo/docker-pydata.svg)](https://hub.docker.com/r/enriquegrodrigo/docker-pydata/)
-# docker-pydata
+# docker-base
 
-This is a base base image for mantaining python data science consistency between 
-developments. 
+Esta es la imagen base del curso. Los diferentes módulos del curso extenderán esta imagen o la 
+usarán directamente (dependiendo de sus necesidades).
 
-## Docker Hub
+## Uso
 
-One can easily obatin the latest image with the default packages using
-```
-docker pull enriquegrodrigo/docker-pydata:latest
-```
-
-## Building the image 
-
-For building the image:
-
-```
-git clone https://github.com/enriquegrodrigo/docker-pydata.git
-docker build -t="Name of the image"
-```
-
-If you want to add more requirements, you can use a `requirements.txt` file in the 
-same folder as the `Dockerfile` and they will be added to the image. 
-
-## Usage
-
-For accessing the folder through Jupyter Notebook:
+Para ejecutar una libreta de Jupyter en el directorio actual:
 
 	docker run --rm -it -v $(pwd)/:/home/work/project -p 8888:8888 enriquegrodrigo/docker-pydata
 
-For executing a python application:
+Para ejecutar una aplicación de Python que no está en un cuaderno:
 
 	docker run --rm -it -v $(pwd)/:/home/work/project -p 8888:8888 enriquegrodrigo/docker-pydata python app.py
 
 
+## Añadir requisitos 
 
+Para añadir requisitos se puede modificar el fichero `requirements.txt` y construir la imagen con el comando: 
+
+  docker build -t="Name of the image" .
+
+Este comando se debe ejecutar en la carpeta base del repositorio.   
