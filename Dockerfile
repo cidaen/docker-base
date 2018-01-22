@@ -11,12 +11,14 @@ RUN pip3 install -r /req/default.requirements.txt
 COPY requirements.txt /req/
 RUN pip3 install -r /req/requirements.txt
 
+COPY jupyter_notebook_config.py /config/config.py
 
 VOLUME /home/work/project 
 
 WORKDIR /home/work/project
 
+
 EXPOSE 8888
 
 
-CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
+CMD ["jupyter", "notebook", "--config", "/config/config.py"]
