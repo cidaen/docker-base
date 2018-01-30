@@ -7,11 +7,11 @@ usarán directamente (dependiendo de sus necesidades).
 
 Para ejecutar una libreta de Jupyter en el directorio actual:
 
-	docker run --rm -it -v $(pwd)/:/home/work/project -p 8888:8888 enriquegrodrigo/docker-pydata
+	docker run --rm -it -v $(pwd)/:/home/work/project -p 8888:8888 cidaen/docker-base
 
 Para ejecutar una aplicación de Python que no está en un cuaderno:
 
-	docker run --rm -it -v $(pwd)/:/home/work/project -p 8888:8888 enriquegrodrigo/docker-pydata python app.py
+	docker run --rm -it -v $(pwd)/:/home/work/project -p 8888:8888 cidaen/docker-base python app.py
 
 
 ## Añadir requisitos 
